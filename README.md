@@ -218,7 +218,7 @@
                 <h3>W3C AI-KR Group</h3>
                 <p>AI Knowledge Representation Community</p>
             </a>
-            <a href="https://ronininstitute.org" class="link-card">
+            <a href="https://ronin-institute.org" class="link-card">
                 <h3>Ronin Institute</h3>
                 <p>Independent Scholarly Research</p>
             </a>
