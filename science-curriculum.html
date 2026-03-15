@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundations of Science -- Paola Di Maio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1814;
+  --muted: #6b6760;
+  --rule: #d9d5cf;
+  --bg: #faf8f4;
+  --surface: #f2ede5;
+  --accent: #2d5a3d;
+  --accent-lt: #e8f0eb;
+  --warm: #b84c1a;
+  --warm-lt: #fdf0e8;
+  --gold: #8a6a1e;
+  --gold-lt: #fdf7e4;
+  --blue: #1e4b7a;
+  --blue-lt: #eaf1f9;
+  --unit-w: 680px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- HEADER ---- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 0 2rem;
+}
+.header-inner {
+  max-width: var(--unit-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.site-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: .03em;
+  color: var(--muted);
+}
+.site-name span { color: var(--accent); font-weight: 500; }
+.header-tag {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  background: var(--surface);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--rule);
+}
+
+/* ---- HERO ---- */
+.hero {
+  max-width: var(--unit-w);
+  margin: 0 auto;
+  padding: 5rem 2rem 3.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.18;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1.4rem;
+  max-width: 520px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 480px;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  background: var(--surface);
+}
+.chip.green { background: var(--accent-lt); color: var(--accent); border-color: var(--accent); }
+
+/* ---- SECTION CONTAINER ---- */
+.section {
+  max-width: var(--unit-w);
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+.section:last-child { border-bottom: none; }
+
+.sec-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+
+/* ---- ABOUT STRIP ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; } }
+
+.about-card {
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+}
+.about-card h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.about-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ---- MODULES (SYLLABUS) ---- */
+.module {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+.module-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s;
+}
+.module-header:hover { background: var(--surface); }
+.module-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 3px;
+  min-width: 28px;
+}
+.module-info { flex: 1; }
+.module-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+.module-desc {
+  font-size: 13px;
+  color: var(--muted);
+}
+.module-tag {
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 3px;
+  border: 1px solid;
+}
+.tag-found { background: var(--accent-lt); color: var(--accent); border-color: #b2cfba; }
+.tag-science { background: var(--blue-lt); color: var(--blue); border-color: #afc5da; }
+.tag-methods { background: var(--gold-lt); color: var(--gold); border-color: #d4bf8a; }
+.tag-app { background: var(--warm-lt); color: var(--warm); border-color: #d8a48a; }
+
+.module-body {
+  display: none;
+  padding: 0 1.4rem 1.4rem 3.8rem;
+  border-top: 1px solid var(--rule);
+}
+.module-body.open { display: block; }
+
+.topic-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+.topic-list li {
+  font-size: 14px;
+  padding: 5px 0;
+  border-bottom: 1px dashed var(--rule);
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+  color: var(--ink);
+}
+.topic-list li:last-child { border-bottom: none; }
+.topic-list li::before {
+  content: '--';
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--rule);
+  flex-shrink: 0;
+}
+
+.week-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 1rem;
+  margin-bottom: .3rem;
+  display: block;
+}
+.outcomes-box {
+  background: var(--accent-lt);
+  border-left: 3px solid var(--accent);
+  padding: .8rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin-top: 1rem;
+}
+.outcomes-box p {
+  font-size: 13px;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.module-chevron {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1;
+  padding-top: 2px;
+  transition: transform .2s;
+}
+.module-chevron.open { transform: rotate(90deg); }
+
+/* ---- SCHEDULE TABLE ---- */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: .5rem;
+}
+.schedule-table th {
+  text-align: left;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding: .5rem .75rem;
+}
+.schedule-table td {
+  padding: .65rem .75rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.schedule-table tr:last-child td { border-bottom: none; }
+.schedule-table tr:hover td { background: var(--surface); }
+.week-cell {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.topic-cell { font-weight: 500; }
+.type-cell .chip { font-size: 11px; }
+
+/* ---- ASSESSMENT ---- */
+.assess-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: .5rem;
+}
+.assess-card {
+  border-radius: 10px;
+  padding: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+.assess-card.green  { background: var(--accent-lt); }
+.assess-card.gold   { background: var(--gold-lt); }
+.assess-card.blue   { background: var(--blue-lt); }
+.assess-card.warm   { background: var(--warm-lt); }
+
+.assess-pct {
+  font-family: 'DM Mono', monospace;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+.assess-card.green .assess-pct { color: var(--accent); }
+.assess-card.gold  .assess-pct { color: var(--gold); }
+.assess-card.blue  .assess-pct { color: var(--blue); }
+.assess-card.warm  .assess-pct { color: var(--warm); }
+
+.assess-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: .2rem;
+}
+.assess-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---- INSTRUCTOR ---- */
+.instructor-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 1.6rem;
+}
+@media (max-width: 480px) { .instructor-strip { flex-direction: column; } }
+.instructor-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  color: #fff;
+  flex-shrink: 0;
+}
+.instructor-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+.instructor-role {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: .7rem;
+}
+.instructor-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.inst-link {
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  color: var(--accent);
+  background: var(--accent-lt);
+  border: 1px solid #b2cfba;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.inst-link:hover { background: #d4e8db; text-decoration: none; }
+
+/* ---- ENROL CTA ---- */
+.cta-bar {
+  background: var(--accent);
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.cta-bar h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+}
+.cta-bar p {
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  margin-top: .2rem;
+}
+.cta-btn {
+  background: #fff;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  padding: .65rem 1.4rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+.cta-btn:hover { opacity: .85; text-decoration: none; }
+
+/* ---- FOOTER ---- */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 2rem;
+}
+.footer-inner {
+  max-width: var(--unit-w);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  font-size: 12px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+}
+
+h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <span class="site-name">pdm / <span>teaching</span></span>
+    <span class="header-tag">demo -- foundations of science</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Undergraduate curriculum -- international cohort</p>
+  <h1>Foundations of <em>Science</em><br>for a Connected World</h1>
+  <p class="hero-sub">
+    A one-semester introductory curriculum designed for international students entering science, technology, or interdisciplinary programmes. No prior university-level science required.
+  </p>
+  <div class="hero-meta">
+    <span class="chip green">Open enrolment</span>
+    <span class="chip">12 weeks</span>
+    <span class="chip">3 hrs/week</span>
+    <span class="chip">English-medium</span>
+    <span class="chip">Multilingual support</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <p class="sec-label">About this course</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>Who is this for?</h3>
+      <p>International students at the start of a science or technology degree who need a rigorous but accessible bridge between secondary school and university-level inquiry. Taught in plain English, with vocabulary support for non-native speakers.</p>
+    </div>
+    <div class="about-card">
+      <h3>What will you learn?</h3>
+      <p>How scientists ask questions, design studies, represent knowledge, and communicate findings. Core concepts from systems science, biology, physics, and computing -- treated as a single connected landscape, not isolated silos.</p>
+    </div>
+    <div class="about-card">
+      <h3>How is it taught?</h3>
+      <p>Weekly lectures, short readings, one hands-on lab activity per unit, and structured peer discussion. Assessment is cumulative -- small exercises build toward a final project of your own choosing.</p>
+    </div>
+    <div class="about-card">
+      <h3>What makes this different?</h3>
+      <p>Designed by a systems engineer and knowledge representation researcher. Emphasis on understanding how knowledge is structured, not just memorising facts. AI tools are critically examined, not uncritically used.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SYLLABUS -->
+<section class="section">
+  <p class="sec-label">Curriculum -- click any unit to expand</p>
+  <h2>Course Modules</h2>
+
+  <!-- Unit 1 -->
+  <div class="module">
+    <div class="module-header" onclick="toggle(this)">
+      <span class="module-num">01</span>
+      <div class="module-info">
+        <div class="module-title">What Is Science? Asking Good Questions</div>
+        <div class="module-desc">The nature of scientific inquiry, observation, and hypothesis</div>
+      </div>
+      <span class="module-tag tag-found">Foundations</span>
+      <span class="module-chevron">&#9654;</span>
+    </div>
+    <div class="module-body">
+      <span class="week-label">Week 1 -- 2</span>
+      <ul class="topic-list">
+        <li>What counts as a scientific question -- and what does not</li>
+        <li>Observation vs. inference: the difference matters</li>
+        <li>Forming a hypothesis: falsifiability explained plainly</li>
+        <li>The role of uncertainty and error in science</li>
+        <li>How different cultures have contributed to scientific knowledge</li>
+        <li>Vocabulary workshop: key terms in English for international learners</li>
+      </ul>
+      <div class="outcomes-box">
+        <p>By the end of this unit you will be able to identify a researchable question in any domain, state a hypothesis clearly, and distinguish anecdote from evidence.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 2 -->
+  <div class="module">
+    <div class="module-header" onclick="toggle(this)">
+      <span class="module-num">02</span>
+      <div class="module-info">
+        <div class="module-title">Systems Thinking: Everything Is Connected</div>
+        <div class="module-desc">Feedback loops, emergence, and the logic of complex systems</div>
+      </div>
+      <span class="module-tag tag-science">Science</span>
+      <span class="module-chevron">&#9654;</span>
+    </div>
+    <div class="module-body">
+      <span class="week-label">Week 3</span>
+      <ul class="topic-list">
+        <li>What is a system? Parts, relationships, and boundaries</li>
+        <li>Positive and negative feedback loops -- with everyday examples</li>
+        <li>Emergence: why the whole is more than the sum of its parts</li>
+        <li>Case study: a forest as a system (energy, matter, information)</li>
+        <li>Drawing a simple system map -- hands-on activity</li>
+      </ul>
+      <div class="outcomes-box">
+        <p>You will draw a system diagram of a real-world phenomenon of your choice and identify at least two feedback mechanisms within it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 3 -->
+  <div class="module">
+    <div class="module-header" onclick="toggle(this)">
+      <span class="module-num">03</span>
+      <div class="module-info">
+        <div class="module-title">The Language of Science: Data, Models, and Representation</div>
+        <div class="module-desc">How knowledge is structured, stored, and communicated</div>
+      </div>
+      <span class="module-tag tag-methods">Methods</span>
+      <span class="module-chevron">&#9654;</span>
+    </div>
+    <div class="module-body">
+      <span class="week-label">Week 4 -- 5</span>
+      <ul class="topic-list">
+        <li>What is data? Qualitative vs. quantitative, structured vs. unstructured</li>
+        <li>Models: why scientists simplify reality on purpose</li>
+        <li>Reading a graph, table, or diagram critically</li>
+        <li>Introduction to knowledge representation: ontologies in plain language</li>
+        <li>The problem of translation: science across languages and cultures</li>
+        <li>Lab: building a simple concept map for a chosen topic</li>
+      </ul>
+      <div class="outcomes-box">
+        <p>You will interpret three scientific figures from published papers and produce your own concept map connecting at least eight terms from a topic of your choice.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 4 -->
+  <div class="module">
+    <div class="module-header" onclick="toggle(this)">
+      <span class="module-num">04</span>
+      <div class="module-info">
+        <div class="module-title">Life, Information, and the Brain</div>
+        <div class="module-desc">Core concepts from biology and neuroscience for non-specialists</div>
+      </div>
+      <span class="module-tag tag-science">Science</span>
+      <span class="module-chevron">&#9654;</span>
+    </div>
+    <div class="module-body">
+      <span class="week-label">Week 6 -- 7</span>
+      <ul class="topic-list">
+        <li>The cell as an information-processing system</li>
+        <li>DNA: instructions, not destiny</li>
+        <li>How neurons work -- the basics without the jargon</li>
+        <li>Perception, attention, memory: what neuroscience tells us</li>
+        <li>Consciousness -- what we know, what we do not, and why it matters</li>
+        <li>Lab: tracing a neural signal from stimulus to response</li>
+      </ul>
+      <div class="outcomes-box">
+        <p>You will explain the relationship between brain activity and perception in a short written piece (400 words) using at least four technical terms correctly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 5 -->
+  <div class="module">
+    <div class="module-header" onclick="toggle(this)">
+      <span class="module-num">05</span>
+      <div class="module-info">
+        <div class="module-title">Computing, Intelligence, and Knowledge</div>
+        <div class="module-desc">How machines process information -- and what they cannot do</div>
+      </div>
+      <span class="module-tag tag-app">Applied</span>
+      <span class="module-chevron">&#9654;</span>
+    </div>
+    <div class="module-body">
+      <span class="week-label">Week 8 -- 9</span>
+      <ul class="topic-list">
+        <li>From arithmetic to artificial intelligence: a short history</li>
+        <li>How machine learning works -- without the mathematics</li>
+        <li>What AI systems actually do when they "understand" language</li>
+        <li>Knowledge representation in computing: why structure matters</li>
+        <li>Critical perspectives: bias, error, and accountability in AI</li>
+        <li>Lab: evaluating an AI-generated text for factual accuracy</li>
+      </ul>
+      <div class="outcomes-box">
+        <p>You will evaluate an AI-generated scientific summary, identify at least two factual or representational errors, and explain why they occurred.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 6 -->
+  <div class="module">
+    <div class="module-header" onclick="toggle(this)">
+      <span class="module-num">06</span>
+      <div class="module-info">
+        <div class="module-title">Science, Society, and Ethics</div>
+        <div class="module-desc">Who decides what gets studied -- and who benefits?</div>
+      </div>
+      <span class="module-tag tag-found">Foundations</span>
+      <span class="module-chevron">&#9654;</span>
+    </div>
+    <div class="module-body">
+      <span class="week-label">Week 10</span>
+      <ul class="topic-list">
+        <li>The politics of funding: what gets researched and why</li>
+        <li>Open science, open access, and the knowledge commons</li>
+        <li>Science in non-Western contexts: indigenous knowledge and formal science</li>
+        <li>Environmental science and systems: climate as a case study</li>
+        <li>Ethical review: what are research ethics and who enforces them?</li>
+      </ul>
+      <div class="outcomes-box">
+        <p>You will write a one-page reflection on a scientific controversy of your choice, identifying the competing interests involved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 7 -->
+  <div class="module">
+    <div class="module-header" onclick="toggle(this)">
+      <span class="module-num">07</span>
+      <div class="module-info">
+        <div class="module-title">Final Project: Your Own Scientific Inquiry</div>
+        <div class="module-desc">Design, conduct, and present a small original investigation</div>
+      </div>
+      <span class="module-tag tag-methods">Methods</span>
+      <span class="module-chevron">&#9654;</span>
+    </div>
+    <div class="module-body">
+      <span class="week-label">Week 11 -- 12</span>
+      <ul class="topic-list">
+        <li>Choosing a question you can actually investigate in two weeks</li>
+        <li>Designing a simple but rigorous study or analysis</li>
+        <li>Collecting, recording, and interpreting your findings</li>
+        <li>Presenting science: oral and written communication skills</li>
+        <li>Peer review practice: giving and receiving constructive feedback</li>
+        <li>Final presentations -- open to all students and invited guests</li>
+      </ul>
+      <div class="outcomes-box">
+        <p>You will present a 10-minute project plus a written summary (800 words) documenting your question, method, findings, and limitations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section">
+  <p class="sec-label">At a glance</p>
+  <h2>Weekly Schedule</h2>
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Topic</th>
+        <th>Format</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="week-cell">1</td><td class="topic-cell">What is science? Asking good questions</td><td><span class="chip tag-found">Lecture + discussion</span></td></tr>
+      <tr><td class="week-cell">2</td><td class="topic-cell">Observation, hypothesis, and falsifiability</td><td><span class="chip tag-methods">Lab activity</span></td></tr>
+      <tr><td class="week-cell">3</td><td class="topic-cell">Systems thinking and feedback loops</td><td><span class="chip tag-science">Lecture + mapping</span></td></tr>
+      <tr><td class="week-cell">4</td><td class="topic-cell">Data, models, and knowledge representation</td><td><span class="chip tag-found">Lecture + discussion</span></td></tr>
+      <tr><td class="week-cell">5</td><td class="topic-cell">Reading science: graphs, tables, concept maps</td><td><span class="chip tag-methods">Lab activity</span></td></tr>
+      <tr><td class="week-cell">6</td><td class="topic-cell">Life and information: cells and DNA</td><td><span class="chip tag-science">Lecture</span></td></tr>
+      <tr><td class="week-cell">7</td><td class="topic-cell">The brain: neurons, perception, consciousness</td><td><span class="chip tag-science">Lecture + lab</span></td></tr>
+      <tr><td class="week-cell">8</td><td class="topic-cell">Computing and artificial intelligence</td><td><span class="chip tag-app">Lecture + workshop</span></td></tr>
+      <tr><td class="week-cell">9</td><td class="topic-cell">AI critical evaluation lab</td><td><span class="chip tag-methods">Lab activity</span></td></tr>
+      <tr><td class="week-cell">10</td><td class="topic-cell">Science, society, and ethics</td><td><span class="chip tag-found">Seminar</span></td></tr>
+      <tr><td class="week-cell">11</td><td class="topic-cell">Project workshop and peer review</td><td><span class="chip tag-methods">Workshop</span></td></tr>
+      <tr><td class="week-cell">12</td><td class="topic-cell">Final presentations</td><td><span class="chip tag-app">Public presentations</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ASSESSMENT -->
+<section class="section">
+  <p class="sec-label">How you are assessed</p>
+  <h2>Assessment Structure</h2>
+  <div class="assess-grid">
+    <div class="assess-card green">
+      <div class="assess-pct">40%</div>
+      <div class="assess-name">Final project</div>
+      <div class="assess-note">Original inquiry + 10 min presentation + 800-word write-up</div>
+    </div>
+    <div class="assess-card gold">
+      <div class="assess-pct">30%</div>
+      <div class="assess-name">Weekly exercises</div>
+      <div class="assess-note">Short activities submitted after each unit -- marked for engagement, not perfection</div>
+    </div>
+    <div class="assess-card blue">
+      <div class="assess-pct">20%</div>
+      <div class="assess-name">Peer review</div>
+      <div class="assess-note">Two structured peer reviews of classmates' draft projects</div>
+    </div>
+    <div class="assess-card warm">
+      <div class="assess-pct">10%</div>
+      <div class="assess-name">Participation</div>
+      <div class="assess-note">Discussion contributions -- quality over quantity; international learners explicitly supported</div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section class="section">
+  <p class="sec-label">Instructor</p>
+  <div class="instructor-strip">
+    <div class="instructor-avatar">PDM</div>
+    <div>
+      <div class="instructor-name">Paola Di Maio, PhD</div>
+      <div class="instructor-role">Chair, W3C AI Knowledge Representation Community Group -- Research Lead, Ronin Institute -- Editor-in-Chief, Anthropomorphic Press</div>
+      <div class="instructor-links">
+        <a class="inst-link" href="https://ronininstitute.academia.edu/PaolaDiMaio">Academia.edu</a>
+        <a class="inst-link" href="https://github.com/Starborn">GitHub</a>
+        <a class="inst-link" href="https://starborn.github.io/webmcp/">WebMCP tools</a>
+        <a class="inst-link" href="https://claudepress.substack.com">Anthropomorphic Press</a>
+        <a class="inst-link" href="https://sites.google.com/view/paoladimaiophd/home">Full portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="cta-bar">
+    <div>
+      <h3>Interested in this course?</h3>
+      <p>Contact to discuss delivery, scheduling, or tailored versions for your institution.</p>
+    </div>
+    <a class="cta-btn" href="mailto:paola.dimaio@gmail.com">Get in touch &#8599;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>Paola Di Maio -- Teaching Portfolio</span>
+    <span><a href="https://starborn.github.io">starborn.github.io</a></span>
+  </div>
+</footer>
+
+<script>
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.module-chevron');
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.module-body.open').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.module-chevron.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    body.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>
