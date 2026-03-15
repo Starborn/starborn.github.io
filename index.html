@@ -1,209 +1,311 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paola Di Maio, PhD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      /* thangka palette -- dusty, muted, ivory-grounded */
+      --bg:        #f5f0e8;       /* warm ivory parchment */
+      --surface:   #fdfaf4;       /* near-white cream */
+      --ink:       #2e2820;       /* deep warm brown */
+      --muted:     #7a6f62;       /* warm stone */
+      --rule:      #ddd5c5;       /* parchment border */
+
+      /* five elements -- all desaturated, dusty */
+      --gold:      #b8852a;       /* earth -- saffron gold, muted */
+      --gold-lt:   #faf2e0;
+      --teal:      #3a7e7a;       /* water -- peacock teal */
+      --teal-lt:   #e8f4f3;
+      --coral:     #b85a42;       /* fire -- dusty coral */
+      --coral-lt:  #faf0ec;
+      --rose:      #9e5a72;       /* air -- dusty rose/pink */
+      --rose-lt:   #f8edf2;
+      --violet:    #6e5a8a;       /* space -- soft violet */
+      --violet-lt: #f2eef8;
+
+      --w: 820px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Georgia', serif;
-      background: #0d0d14;
-      color: #e0e0e8;
-      line-height: 1.75;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.78;
+      font-size: 18px;
     }
 
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; opacity: .85; }
+
+    /* HEADER */
     header {
-      padding: 4rem 2rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      border-bottom: 1px solid #2a2a3a;
+      background: var(--surface);
+      border-bottom: 1px solid var(--rule);
+      position: relative;
     }
-
+    .header-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 3.8rem 2rem 2.6rem;
+    }
     header h1 {
-      font-size: 2.2rem;
-      color: #c8d8f0;
-      letter-spacing: 0.02em;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: .015em;
+      margin-bottom: .4rem;
+    }
+    .subtitle {
+      font-size: .82rem;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: .04em;
     }
 
-    header .subtitle {
-      color: #7a8fa8;
-      font-size: 1rem;
-      margin-top: 0.4rem;
-      font-style: italic;
+    /* five-colour rainbow stripe -- subtle, 3px */
+    .rainbow-bar {
+      height: 3px;
+      background: linear-gradient(to right,
+        var(--gold)   0%   20%,
+        var(--teal)   20%  40%,
+        var(--coral)  40%  60%,
+        var(--rose)   60%  80%,
+        var(--violet) 80% 100%
+      );
+      opacity: .75;
     }
 
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
+    /* MAIN */
+    main { max-width: var(--w); margin: 0 auto; padding: 0 2rem 5rem; }
+
+    section {
+      padding: 2.8rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    section:last-child { border-bottom: none; }
+
+    /* section eyebrow with coloured dot */
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      opacity: .85;
     }
 
-    section { margin-bottom: 2.8rem; }
+    .e-gold   .eyebrow { color: var(--gold);   } .e-gold   .eyebrow::before { background: var(--gold);   }
+    .e-teal   .eyebrow { color: var(--teal);   } .e-teal   .eyebrow::before { background: var(--teal);   }
+    .e-coral  .eyebrow { color: var(--coral);  } .e-coral  .eyebrow::before { background: var(--coral);  }
+    .e-rose   .eyebrow { color: var(--rose);   } .e-rose   .eyebrow::before { background: var(--rose);   }
+    .e-violet .eyebrow { color: var(--violet); } .e-violet .eyebrow::before { background: var(--violet); }
 
     h2 {
-      font-size: 1.1rem;
-      color: #88aacc;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 1.2rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #1e2a3a;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 1.3rem;
+      letter-spacing: .01em;
     }
 
-    p { margin-bottom: 1rem; color: #c8c8d8; }
-
-    ul { list-style: none; padding: 0; }
-    ul li { margin-bottom: 0.5rem; }
-
-    a {
-      color: #6ab0d8;
-      text-decoration: none;
-    }
-    a:hover { color: #a8d4f0; text-decoration: underline; }
-
-    .role-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
+    .body-text {
+      font-size: .93rem;
+      color: var(--muted);
+      margin-bottom: .7rem;
+      line-height: 1.78;
     }
 
+    /* ROLE GRID */
+    .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
     .role-item {
-      background: #131320;
-      border: 1px solid #1e2a3a;
-      border-radius: 6px;
-      padding: 0.9rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 7px;
+      padding: .85rem 1.1rem;
     }
-
-    .role-item .role-title {
-      font-size: 0.85rem;
-      color: #88aacc;
-      font-weight: bold;
+    .role-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
       display: block;
-      margin-bottom: 0.2rem;
+      margin-bottom: .18rem;
     }
+    .e-teal .role-label   { color: var(--teal); }
+    .e-gold .role-label   { color: var(--gold); }
+    .role-org { font-size: .87rem; color: var(--ink); line-height: 1.45; }
 
-    .role-item .role-org {
-      font-size: 0.9rem;
-      color: #c8c8d8;
-    }
-
-    .link-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
-    }
-
+    /* LINK GRID */
+    .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
     .link-card {
-      background: #131320;
-      border: 1px solid #1e2a3a;
-      border-radius: 6px;
-      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 7px;
+      padding: .95rem 1.1rem;
       display: block;
-      transition: border-color 0.2s;
+      transition: border-color .2s, box-shadow .2s;
     }
+    .link-card:hover { text-decoration: none; box-shadow: 0 2px 14px rgba(46,40,32,.08); }
+    .e-gold   .link-card:hover { border-color: var(--gold);   }
+    .e-teal   .link-card:hover { border-color: var(--teal);   }
+    .e-coral  .link-card:hover { border-color: var(--coral);  }
+    .e-rose   .link-card:hover { border-color: var(--rose);   }
+    .e-violet .link-card:hover { border-color: var(--violet); }
 
-    .link-card:hover {
-      border-color: #6ab0d8;
-      text-decoration: none;
-    }
-
-    .link-card .card-title {
-      font-size: 0.95rem;
-      color: #6ab0d8;
-      font-weight: bold;
+    .card-title {
+      font-size: .9rem;
+      font-weight: 500;
       display: block;
-      margin-bottom: 0.3rem;
+      margin-bottom: .28rem;
+      line-height: 1.35;
     }
+    .e-gold   .card-title { color: var(--gold);   }
+    .e-teal   .card-title { color: var(--teal);   }
+    .e-coral  .card-title { color: var(--coral);  }
+    .e-rose   .card-title { color: var(--rose);   }
+    .e-violet .card-title { color: var(--violet); }
 
-    .link-card .card-desc {
-      font-size: 0.82rem;
-      color: #7a8fa8;
-    }
+    .card-desc { font-size: .78rem; color: var(--muted); line-height: 1.58; }
 
-    .pub-list li {
-      padding: 0.7rem 0;
-      border-bottom: 1px solid #1a1a2a;
-      font-size: 0.9rem;
-      color: #b8b8cc;
-    }
+    /* featured card -- light tinted bg */
+    .link-card.feat-rose   { border-color: #d4a0b5; background: var(--rose-lt);   }
+    .link-card.feat-violet { border-color: #b0a0cc; background: var(--violet-lt); }
 
+    /* PUBLICATION LIST */
+    .pub-list { list-style: none; }
+    .pub-list li { padding: .72rem 0; border-bottom: 1px solid var(--rule); font-size: .87rem; }
     .pub-list li:last-child { border-bottom: none; }
+    .pub-title  { color: var(--ink); display: block; margin-bottom: .15rem; font-weight: 500; line-height: 1.4; }
+    .pub-venue  { color: var(--muted); font-size: .78rem; font-style: italic; }
 
-    .pub-list .pub-title {
-      color: #c8d8f0;
-      display: block;
-      margin-bottom: 0.2rem;
+    .pill {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: .64rem;
+      padding: 1px 8px;
+      border-radius: 20px;
+      margin-left: .35rem;
+      vertical-align: middle;
+      letter-spacing: .02em;
+    }
+    .pill-violet { background: var(--violet-lt); color: var(--violet); border: 1px solid #c0b4d8; }
+    .pill-coral  { background: var(--coral-lt);  color: var(--coral);  border: 1px solid #d4a898; }
+    .pill-gold   { background: var(--gold-lt);   color: var(--gold);   border: 1px solid #d8b87a; }
+    .pill-teal   { background: var(--teal-lt);   color: var(--teal);   border: 1px solid #98c4c2; }
+    .pill-rose   { background: var(--rose-lt);   color: var(--rose);   border: 1px solid #c8a0b4; }
+
+    /* CONSULTING */
+    .consult-box {
+      background: var(--gold-lt);
+      border: 1px solid #d8c080;
+      border-radius: 8px;
+      padding: 1.3rem 1.5rem;
+      font-size: .88rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .consult-box strong { color: var(--gold); }
+    .pill-row { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .8rem; }
+    .pill-row .pill {
+      background: var(--surface);
+      color: var(--gold);
+      border: 1px solid #d8c080;
+      margin-left: 0;
     }
 
-    .pub-list .pub-venue {
-      color: #6a7a8a;
+    .foot-note {
+      font-size: .8rem;
+      color: var(--muted);
       font-style: italic;
-      font-size: 0.82rem;
+      margin-top: .9rem;
+      padding-left: .85rem;
+      border-left: 2px solid var(--rule);
+      line-height: 1.6;
     }
 
     footer {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      border-top: 1px solid #1e2a3a;
-      color: #4a5a6a;
-      font-size: 0.82rem;
+      border-top: 1px solid var(--rule);
+      padding: 2.2rem 2rem;
       text-align: center;
+      font-size: .76rem;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: .03em;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 580px) {
       .role-grid, .link-grid { grid-template-columns: 1fr; }
-      header h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Paola Di Maio, PhD</h1>
-  <p class="subtitle">Systems Engineering &middot; Knowledge Representation &middot; Consciousness Studies &middot; Citizen Science</p>
+  <div class="header-inner">
+    <h1>Paola Di Maio, PhD</h1>
+    <p class="subtitle">Systems Engineering &middot; Knowledge Representation &middot; Consciousness Studies &middot; Citizen Science</p>
+  </div>
+  <div class="rainbow-bar"></div>
 </header>
 
 <main>
 
-  <!-- ABOUT -->
-  <section>
-    <p>I work at the intersection of systems thinking, contemplative practice, and human-AI co-evolution, treating technological development as both rigorous research and a practice in awareness.</p>
-    <p>My approach integrates systems engineering with diverse disciplines, exploring how intelligence, consciousness and technology inform each other. I balance intensive research with embodied practice.</p>
+  <!-- ABOUT -- gold/earth -->
+  <section class="e-gold">
+    <p class="eyebrow">About</p>
+    <p class="body-text">I work at the intersection of systems thinking, contemplative practice, and human-AI co-evolution, treating technological development as both rigorous research and a practice in awareness.</p>
+    <p class="body-text">My approach integrates systems engineering with diverse disciplines, exploring how intelligence, consciousness and technology inform each other. I balance intensive research with embodied practice.</p>
   </section>
 
-  <!-- CURRENT ROLES -->
-  <section>
-    <h2>Current Roles</h2>
+  <!-- CURRENT ROLES -- teal/water -->
+  <section class="e-teal">
+    <p class="eyebrow">Current Roles</p>
+    <h2>Positions</h2>
     <div class="role-grid">
       <div class="role-item">
-        <span class="role-title">Chair</span>
+        <span class="role-label">Chair</span>
         <span class="role-org"><a href="https://www.w3.org/community/aikr/">W3C AI Knowledge Representation Community Group</a></span>
       </div>
       <div class="role-item">
-        <span class="role-title">Research Lead</span>
+        <span class="role-label">Research Lead</span>
         <span class="role-org"><a href="https://ronin-institute.org">Center for Systems, Knowledge Representation &amp; Neuroscience, Ronin Institute</a></span>
       </div>
       <div class="role-item">
-        <span class="role-title">Editor-in-Chief</span>
+        <span class="role-label">Editor-in-Chief</span>
         <span class="role-org">Anthropomorphic Press (indexed in Dow Jones Factiva)</span>
       </div>
       <div class="role-item">
-        <span class="role-title">Mixed Media Sculptor</span>
-        <span class="role-org"><a href="https://visualartsscotland.org">Visual Arts Scotland</a> (as Paula Vera Bloom)</span>
+        <span class="role-label">Mixed Media Sculptor</span>
+        <span class="role-org"><a href="https://visualartsscotland.org">Visual Arts Scotland</a> &mdash; as Paula Vera Bloom</span>
       </div>
     </div>
   </section>
 
-  <!-- ACTIVE PROJECTS -->
-  <section>
-    <h2>Active Projects</h2>
+  <!-- ACTIVE PROJECTS -- coral/fire -->
+  <section class="e-coral">
+    <p class="eyebrow">Active Projects</p>
+    <h2>Current Work</h2>
     <div class="link-grid">
       <a class="link-card" href="https://starborn.github.io/copp-notebook/">
         <span class="card-title">COPP Pipeline</span>
-        <span class="card-desc">Citizen Observatory for Photometric Phenomena &mdash; AI-powered analysis and classification of anomalous luminous phenomena from consumer video. Methodology under review at Journal of Scientific Exploration.</span>
+        <span class="card-desc">Citizen Observatory for Photometric Phenomena &mdash; AI-powered analysis of anomalous luminous phenomena. Under review at Journal of Scientific Exploration.</span>
       </a>
       <a class="link-card" href="https://starborn.github.io/MCP-Model-Card-Generator/">
         <span class="card-title">MCP Model Card Specification v1.0</span>
@@ -211,7 +313,7 @@
       </a>
       <a class="link-card" href="https://starborn.github.io/webmcp/">
         <span class="card-title">WebMCP Model Card Generator</span>
-        <span class="card-desc">Documentation tooling for the W3C WebMCP browser-side specification. First standardised generator for the Web Machine Learning Community Group.</span>
+        <span class="card-desc">Documentation tooling for the W3C WebMCP browser-side specification.</span>
       </a>
       <a class="link-card" href="https://huggingface.co/spaces/STARBORN/AICELS">
         <span class="card-title">AICELS &mdash; Hugging Face</span>
@@ -220,9 +322,127 @@
     </div>
   </section>
 
-  <!-- ACADEMIC PROFILES -->
-  <section>
-    <h2>Academic Profiles &amp; Publications</h2>
+  <!-- TEACHING -- rose/air -->
+  <section class="e-rose">
+    <p class="eyebrow">Teaching &amp; Course Materials</p>
+    <h2>Teaching</h2>
+    <div class="link-grid">
+      <a class="link-card feat-rose" href="https://starborn.github.io/science-c1.html">
+        <span class="card-title">Foundations of Science &mdash; Curriculum Demo</span>
+        <span class="card-desc">12-week introductory science curriculum for international undergraduates. Systems thinking, neuroscience, AI literacy, ethics. Interactive expandable syllabus.</span>
+      </a>
+      <a class="link-card feat-rose" href="https://mog-x.vercel.app">
+        <span class="card-title">MOGx &mdash; Interactive Tutorial Platform</span>
+        <span class="card-desc">Interactive tutorials on emerging web technologies and AI research. Vinext and Python fundamentals modules pitched at undergraduates.</span>
+      </a>
+      <a class="link-card" href="https://starborn.github.io/webmcp/webmcp-complete-guide.html">
+        <span class="card-title">WebMCP Complete Guide</span>
+        <span class="card-desc">Technical teaching document on the W3C WebMCP browser-side specification.</span>
+      </a>
+      <a class="link-card" href="https://starborn.github.io/webmcp/webmcp-quiz.html">
+        <span class="card-title">WebMCP Self-Assessment Quiz</span>
+        <span class="card-desc">Interactive quiz to test understanding of the WebMCP specification.</span>
+      </a>
+      <a class="link-card" href="https://www.slideshare.net/PaolaDIM/just-enough-oe-part-1">
+        <span class="card-title">Just Enough Ontology Engineering &mdash; Lecture Notes</span>
+        <span class="card-desc">Introductory lecture notes used at WIMS'11, Norway. Cited in peer-reviewed ontology research.</span>
+      </a>
+      <a class="link-card" href="https://www.academia.edu/40005771/KNOWLEDGE_REPRESENTATION_For_Machine_Learning">
+        <span class="card-title">Knowledge Representation for Machine Learning</span>
+        <span class="card-desc">Teaching paper bridging classical KR with contemporary machine learning.</span>
+      </a>
+    </div>
+    <p class="foot-note">Available for contract teaching, curriculum design, and workshop facilitation. Multilingual delivery &mdash; English, Italian, French.</p>
+  </section>
+
+  <!-- BOOKS & CHAPTERS -- violet/space -->
+  <section class="e-violet">
+    <p class="eyebrow">Books &amp; Monographs</p>
+    <h2>Books, Chapters &amp; Columns</h2>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title">System Level Knowledge Representation for Metacognition in Neuroscience <span class="pill pill-violet">Book chapter</span></span>
+        <span class="pub-venue"><a href="https://link.springer.com/chapter/10.1007/978-3-030-86993-9_8">Brain Informatics (BI 2021), Lecture Notes in Computer Science, Springer</a></span>
+      </li>
+      <li>
+        <span class="pub-title">System Level Knowledge Analysis and Keyword Extraction in Neuroscience <span class="pill pill-violet">Book chapter</span></span>
+        <span class="pub-venue"><a href="https://link.springer.com/chapter/10.1007/978-3-030-86993-9_21">Brain Informatics (BI 2021), Lecture Notes in Computer Science, Springer</a></span>
+      </li>
+      <li>
+        <span class="pub-title">Towards a Web Standard for Neuro-Symbolic Integration and Knowledge Representation Using Model Cards <span class="pill pill-violet">Book chapter</span></span>
+        <span class="pub-venue">ResearchGate preprint, 2023</span>
+      </li>
+      <li>
+        <span class="pub-title">Knowledge Representation for Neuroscience &mdash; Neuromorphism and Neurosymbolic Integration <span class="pill pill-coral">Monograph</span></span>
+        <span class="pub-venue">Brain Informatics and Knowledge Representation series &mdash; system-level integration, hybrid data model</span>
+      </li>
+      <li>
+        <span class="pub-title">Mindful Technology &mdash; Column Series <span class="pill pill-teal">32 articles</span></span>
+        <span class="pub-venue"><a href="https://www.buddhistdoor.net/author/paola-di-maio/">Buddhistdoor Global, 2016&ndash;2023</a> &mdash; Noble Eightfold Path mapped to systems engineering and technology ethics</span>
+      </li>
+      <li>
+        <span class="pub-title">Anthropomorphic Press &mdash; AI Journalism Column <span class="pill pill-rose">Ongoing</span></span>
+        <span class="pub-venue"><a href="https://claudepress.substack.com">claudepress.substack.com</a> &mdash; indexed in Dow Jones Factiva</span>
+      </li>
+      <li>
+        <span class="pub-title"><a href="https://ronininstitute.academia.edu/PaolaDiMaio/CurriculumVitae">Full list of publications and book contributions &rarr;</a></span>
+        <span class="pub-venue">Ronin Institute Academia.edu &mdash; 103 papers, 4 books, 4 teaching documents</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TALKS & KEYNOTES -- gold/earth -->
+  <section class="e-gold">
+    <p class="eyebrow">Talks &amp; Keynotes</p>
+    <h2>Selected Talks</h2>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title">Open and Shared Representations for Neuroscience <span class="pill pill-gold">Keynote</span></span>
+        <span class="pub-venue"><a href="https://github.com/ohbm/osr2020/issues/24">OHBM Open Science Room 2020</a> &mdash; open data integration and knowledge representation roadmap for neuroscience</span>
+      </li>
+      <li>
+        <span class="pub-title">Knowledge Engineering for Library and Information Systems <span class="pill pill-gold">Keynote</span></span>
+        <span class="pub-venue">IFLA Satellite Workshop, Singapore &mdash; associated book chapter published by De Gruyter</span>
+      </li>
+      <li>
+        <span class="pub-title">Socio-Technical Approaches and Ontology</span>
+        <span class="pub-venue">EUON Workshop at EUDAT, Amsterdam, 2014</span>
+      </li>
+      <li>
+        <span class="pub-title">Toward a Shared Vocabulary for Systems Engineering</span>
+        <span class="pub-venue">WIMS'11, Sogndal, Norway, 2011 &mdash; tutorial and paper presentation</span>
+      </li>
+      <li>
+        <span class="pub-title">Open Workflows &mdash; GUIs and Cloud-Based Docker for Neuroscience</span>
+        <span class="pub-venue">OHBM Open Science Room 2020 &mdash; emergent session on containerisation</span>
+      </li>
+    </ul>
+    <p class="foot-note">Additional talks at IEEE SysCon, ISIC, iCAST, W3C workshops, and Ontolog Forum. Full list on <a href="https://sites.google.com/view/paoladimaiophd/talks">Google Sites portfolio</a>.</p>
+  </section>
+
+  <!-- CONSULTING -- teal -->
+  <section class="e-teal">
+    <p class="eyebrow">Consulting</p>
+    <h2>Consulting &amp; Advisory</h2>
+    <div class="consult-box">
+      <strong>Available for contract and advisory engagements.</strong> Work spans independent research, technical strategy, curriculum design, standards contribution, and editorial direction.
+      <div class="pill-row">
+        <span class="pill">Systems Engineering</span>
+        <span class="pill">Knowledge Representation</span>
+        <span class="pill">AI Evaluation &amp; Audit</span>
+        <span class="pill">Curriculum Design</span>
+        <span class="pill">Standards &amp; Policy</span>
+        <span class="pill">Science Communication</span>
+        <span class="pill">Editorial Direction</span>
+        <span class="pill">Neuroscience Research</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC PROFILES -- violet -->
+  <section class="e-violet">
+    <p class="eyebrow">Academic Profiles</p>
+    <h2>Academic Presence</h2>
     <div class="link-grid">
       <a class="link-card" href="https://scholar.google.com/citations?user=NzExJ_QAAAAJ&hl=en">
         <span class="card-title">Google Scholar</span>
@@ -234,15 +454,15 @@
       </a>
       <a class="link-card" href="https://www.researchgate.net/profile/Paola-Di-Maio-dr">
         <span class="card-title">ResearchGate</span>
-        <span class="card-desc">Full publication list including socio-technical systems, knowledge engineering, and AI transparency research.</span>
+        <span class="card-desc">Full publication list including socio-technical systems, knowledge engineering, and AI transparency.</span>
       </a>
       <a class="link-card" href="https://ronininstitute.academia.edu/PaolaDiMaio">
         <span class="card-title">Academia.edu</span>
-        <span class="card-desc">Papers on deepfakes, systemic deviation, knowledge reuse, and AI knowledge representation.</span>
+        <span class="card-desc">103 papers, 4 books, 4 teaching documents.</span>
       </a>
       <a class="link-card" href="https://dblp.org/pid/45/10043.html">
         <span class="card-title">DBLP</span>
-        <span class="card-desc">Computer science publication index including AI, knowledge representation, and neuroscience work.</span>
+        <span class="card-desc">Computer science index including AI, knowledge representation, and neuroscience work.</span>
       </a>
       <a class="link-card" href="https://orcid.org/0000-0002-0903-5812">
         <span class="card-title">ORCID</span>
@@ -251,13 +471,14 @@
     </div>
   </section>
 
-  <!-- SELECTED PUBLICATIONS -->
-  <section>
-    <h2>Selected Publications</h2>
+  <!-- SELECTED PUBLICATIONS -- coral -->
+  <section class="e-coral">
+    <p class="eyebrow">Selected Publications</p>
+    <h2>Publications</h2>
     <ul class="pub-list">
       <li>
         <span class="pub-title">System Level Knowledge Representation for Metacognition in Neuroscience</span>
-        <span class="pub-venue">Brain Informatics (BI), 2021</span>
+        <span class="pub-venue">Brain Informatics (BI), Springer, 2021</span>
       </li>
       <li>
         <span class="pub-title">Knowledge Representation for Algorithmic Auditing to Detangle Systemic Bias</span>
@@ -281,7 +502,7 @@
       </li>
       <li>
         <span class="pub-title">Just Enough Ontology: Systems Engineering Approach to Ontology Development</span>
-        <span class="pub-venue">Interdisciplinary journal, multiple citations</span>
+        <span class="pub-venue">WIMS'11, ACM, 2011 &mdash; multiple citations</span>
       </li>
       <li>
         <span class="pub-title"><a href="https://ronininstitute.academia.edu/PaolaDiMaio/CurriculumVitae">Full CV &rarr;</a></span>
@@ -290,32 +511,26 @@
     </ul>
   </section>
 
-  <!-- WRITING & JOURNALISM -->
-  <section>
-    <h2>Writing &amp; Journalism</h2>
-    <div class="link-grid">
-      <a class="link-card" href="https://claudepress.substack.com">
-        <span class="card-title">Anthropomorphic Press &mdash; Substack</span>
-        <span class="card-desc">AI journalism exploring machine consciousness, ethics, and human-AI co-evolution. Claude as primary columnist, indexed in Dow Jones Factiva.</span>
-      </a>
-      <a class="link-card" href="https://sites.google.com/view/paoladimaiophd/home">
-        <span class="card-title">Personal Research Site</span>
-        <span class="card-desc">Portfolio of publications, talks, and projects across education, research, and industry.</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- STANDARDS & COMMUNITY -->
-  <section>
-    <h2>Standards &amp; Community</h2>
+  <!-- STANDARDS & COMMUNITY -- rose -->
+  <section class="e-rose">
+    <p class="eyebrow">Standards &amp; Community</p>
+    <h2>Standards &amp; Open Source</h2>
     <div class="link-grid">
       <a class="link-card" href="https://www.w3.org/community/aikr/">
         <span class="card-title">W3C AI-KR Community Group</span>
-        <span class="card-desc">Chair of the AI Knowledge Representation Community Group &mdash; advancing standards for AI knowledge representation on the web.</span>
+        <span class="card-desc">Chair &mdash; advancing standards for AI knowledge representation on the web.</span>
       </a>
       <a class="link-card" href="https://github.com/Starborn">
         <span class="card-title">GitHub &mdash; Starborn</span>
         <span class="card-desc">Open-source tools including COPP, MCP Model Card Generator, WebMCP tooling, and bias detection research.</span>
+      </a>
+      <a class="link-card" href="https://claudepress.substack.com">
+        <span class="card-title">Anthropomorphic Press &mdash; Substack</span>
+        <span class="card-desc">AI journalism on machine consciousness, ethics, and human-AI co-evolution. Indexed in Dow Jones Factiva.</span>
+      </a>
+      <a class="link-card" href="https://sites.google.com/view/paoladimaiophd/home">
+        <span class="card-title">Personal Research Site</span>
+        <span class="card-desc">Extended portfolio of publications, talks, and projects across education, research, and industry.</span>
       </a>
     </div>
   </section>
@@ -324,7 +539,7 @@
 
 <footer>
   Living deliberately &middot; Practicing presence &middot; Researching emergence
-  <br>
+  <br><br>
   <a href="mailto:paola.dimaio@gmail.com">paola.dimaioATgmailDOTcom</a>
 </footer>
 
