@@ -8,251 +8,85 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* thangka palette -- dusty, muted, ivory-grounded */
-      --bg:        #f5f0e8;       /* warm ivory parchment */
-      --surface:   #fdfaf4;       /* near-white cream */
-      --ink:       #2e2820;       /* deep warm brown */
-      --muted:     #7a6f62;       /* warm stone */
-      --rule:      #ddd5c5;       /* parchment border */
-
-      /* five elements -- all desaturated, dusty */
-      --gold:      #b8852a;       /* earth -- saffron gold, muted */
+      --bg:        #f5f0e8;
+      --surface:   #fdfaf4;
+      --ink:       #2e2820;
+      --muted:     #7a6f62;
+      --rule:      #ddd5c5;
+      --gold:      #b8852a;
       --gold-lt:   #faf2e0;
-      --teal:      #3a7e7a;       /* water -- peacock teal */
+      --teal:      #3a7e7a;
       --teal-lt:   #e8f4f3;
-      --coral:     #b85a42;       /* fire -- dusty coral */
+      --coral:     #b85a42;
       --coral-lt:  #faf0ec;
-      --rose:      #9e5a72;       /* air -- dusty rose/pink */
+      --rose:      #9e5a72;
       --rose-lt:   #f8edf2;
-      --violet:    #6e5a8a;       /* space -- soft violet */
+      --violet:    #6e5a8a;
       --violet-lt: #f2eef8;
-
       --w: 820px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.78;
-      font-size: 22px;
-    }
-
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.78; font-size: 22px; }
     a { color: var(--teal); text-decoration: none; }
     a:hover { text-decoration: underline; opacity: .85; }
-
-    /* HEADER */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--rule);
-      position: relative;
-    }
-    .header-inner {
-      max-width: var(--w);
-      margin: 0 auto;
-      padding: 3.8rem 2rem 2.6rem;
-    }
-    header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 3rem);
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: .015em;
-      margin-bottom: .4rem;
-    }
-    .subtitle {
-      font-size: .82rem;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      letter-spacing: .04em;
-    }
-
-    /* five-colour rainbow stripe -- subtle, 3px */
-    .rainbow-bar {
-      height: 3px;
-      background: linear-gradient(to right,
-        var(--gold)   0%   20%,
-        var(--teal)   20%  40%,
-        var(--coral)  40%  60%,
-        var(--rose)   60%  80%,
-        var(--violet) 80% 100%
-      );
-      opacity: .75;
-    }
-
-    /* MAIN */
+    header { background: var(--surface); border-bottom: 1px solid var(--rule); position: relative; }
+    .header-inner { max-width: var(--w); margin: 0 auto; padding: 3.8rem 2rem 2.6rem; }
+    header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 400; color: var(--ink); letter-spacing: .015em; margin-bottom: .4rem; }
+    .subtitle { font-size: .82rem; color: var(--muted); font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+    .rainbow-bar { height: 3px; background: linear-gradient(to right, var(--gold) 0% 20%, var(--teal) 20% 40%, var(--coral) 40% 60%, var(--rose) 60% 80%, var(--violet) 80% 100%); opacity: .75; }
     main { max-width: var(--w); margin: 0 auto; padding: 0 2rem 5rem; }
-
-    section {
-      padding: 2.8rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
+    section { padding: 2.8rem 0; border-bottom: 1px solid var(--rule); }
     section:last-child { border-bottom: none; }
-
-    /* section eyebrow with coloured dot */
-    .eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: .7rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: .45rem;
-    }
-    .eyebrow::before {
-      content: '';
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      opacity: .85;
-    }
-
+    .eyebrow { font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: .45rem; }
+    .eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; opacity: .85; }
     .e-gold   .eyebrow { color: var(--gold);   } .e-gold   .eyebrow::before { background: var(--gold);   }
     .e-teal   .eyebrow { color: var(--teal);   } .e-teal   .eyebrow::before { background: var(--teal);   }
     .e-coral  .eyebrow { color: var(--coral);  } .e-coral  .eyebrow::before { background: var(--coral);  }
     .e-rose   .eyebrow { color: var(--rose);   } .e-rose   .eyebrow::before { background: var(--rose);   }
     .e-violet .eyebrow { color: var(--violet); } .e-violet .eyebrow::before { background: var(--violet); }
-
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 1.3rem;
-      letter-spacing: .01em;
-    }
-
-    .body-text {
-      font-size: .93rem;
-      color: var(--muted);
-      margin-bottom: .7rem;
-      line-height: 1.78;
-    }
-
-    /* ROLE GRID */
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; color: var(--ink); margin-bottom: 1.3rem; letter-spacing: .01em; }
+    .body-text { font-size: .93rem; color: var(--muted); margin-bottom: .7rem; line-height: 1.78; }
     .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
-    .role-item {
-      background: var(--surface);
-      border: 1px solid var(--rule);
-      border-radius: 7px;
-      padding: .85rem 1.1rem;
-    }
-    .role-label {
-      font-family: 'DM Mono', monospace;
-      font-size: .68rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: .18rem;
-    }
-    .e-teal .role-label   { color: var(--teal); }
-    .e-gold .role-label   { color: var(--gold); }
+    .role-item { background: var(--surface); border: 1px solid var(--rule); border-radius: 7px; padding: .85rem 1.1rem; }
+    .role-label { font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; display: block; margin-bottom: .18rem; }
+    .e-teal .role-label { color: var(--teal); }
+    .e-gold .role-label { color: var(--gold); }
     .role-org { font-size: .87rem; color: var(--ink); line-height: 1.45; }
-
-    /* LINK GRID */
     .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
-    .link-card {
-      background: var(--surface);
-      border: 1px solid var(--rule);
-      border-radius: 7px;
-      padding: .95rem 1.1rem;
-      display: block;
-      transition: border-color .2s, box-shadow .2s;
-    }
+    .link-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 7px; padding: .95rem 1.1rem; display: block; transition: border-color .2s, box-shadow .2s; }
     .link-card:hover { text-decoration: none; box-shadow: 0 2px 14px rgba(46,40,32,.08); }
     .e-gold   .link-card:hover { border-color: var(--gold);   }
     .e-teal   .link-card:hover { border-color: var(--teal);   }
     .e-coral  .link-card:hover { border-color: var(--coral);  }
     .e-rose   .link-card:hover { border-color: var(--rose);   }
     .e-violet .link-card:hover { border-color: var(--violet); }
-
-    .card-title {
-      font-size: .9rem;
-      font-weight: 500;
-      display: block;
-      margin-bottom: .28rem;
-      line-height: 1.35;
-    }
+    .card-title { font-size: .9rem; font-weight: 500; display: block; margin-bottom: .28rem; line-height: 1.35; }
     .e-gold   .card-title { color: var(--gold);   }
     .e-teal   .card-title { color: var(--teal);   }
     .e-coral  .card-title { color: var(--coral);  }
     .e-rose   .card-title { color: var(--rose);   }
     .e-violet .card-title { color: var(--violet); }
-
     .card-desc { font-size: .78rem; color: var(--muted); line-height: 1.58; }
-
-    /* featured card -- light tinted bg */
     .link-card.feat-rose   { border-color: #d4a0b5; background: var(--rose-lt);   }
     .link-card.feat-violet { border-color: #b0a0cc; background: var(--violet-lt); }
-
-    /* PUBLICATION LIST */
     .pub-list { list-style: none; }
     .pub-list li { padding: .72rem 0; border-bottom: 1px solid var(--rule); font-size: .87rem; }
     .pub-list li:last-child { border-bottom: none; }
     .pub-title  { color: var(--ink); display: block; margin-bottom: .15rem; font-weight: 500; line-height: 1.4; }
     .pub-venue  { color: var(--muted); font-size: .78rem; font-style: italic; }
-
-    .pill {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: .64rem;
-      padding: 1px 8px;
-      border-radius: 20px;
-      margin-left: .35rem;
-      vertical-align: middle;
-      letter-spacing: .02em;
-    }
+    .pill { display: inline-block; font-family: 'DM Mono', monospace; font-size: .64rem; padding: 1px 8px; border-radius: 20px; margin-left: .35rem; vertical-align: middle; letter-spacing: .02em; }
     .pill-violet { background: var(--violet-lt); color: var(--violet); border: 1px solid #c0b4d8; }
     .pill-coral  { background: var(--coral-lt);  color: var(--coral);  border: 1px solid #d4a898; }
     .pill-gold   { background: var(--gold-lt);   color: var(--gold);   border: 1px solid #d8b87a; }
     .pill-teal   { background: var(--teal-lt);   color: var(--teal);   border: 1px solid #98c4c2; }
     .pill-rose   { background: var(--rose-lt);   color: var(--rose);   border: 1px solid #c8a0b4; }
-
-    /* CONSULTING */
-    .consult-box {
-      background: var(--gold-lt);
-      border: 1px solid #d8c080;
-      border-radius: 8px;
-      padding: 1.3rem 1.5rem;
-      font-size: .88rem;
-      color: var(--ink);
-      line-height: 1.65;
-    }
+    .consult-box { background: var(--gold-lt); border: 1px solid #d8c080; border-radius: 8px; padding: 1.3rem 1.5rem; font-size: .88rem; color: var(--ink); line-height: 1.65; }
     .consult-box strong { color: var(--gold); }
     .pill-row { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .8rem; }
-    .pill-row .pill {
-      background: var(--surface);
-      color: var(--gold);
-      border: 1px solid #d8c080;
-      margin-left: 0;
-    }
-
-    .foot-note {
-      font-size: .8rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-top: .9rem;
-      padding-left: .85rem;
-      border-left: 2px solid var(--rule);
-      line-height: 1.6;
-    }
-
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 2.2rem 2rem;
-      text-align: center;
-      font-size: .76rem;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      letter-spacing: .03em;
-    }
-
-    @media (max-width: 580px) {
-      .role-grid, .link-grid { grid-template-columns: 1fr; }
-    }
+    .pill-row .pill { background: var(--surface); color: var(--gold); border: 1px solid #d8c080; margin-left: 0; }
+    .foot-note { font-size: .8rem; color: var(--muted); font-style: italic; margin-top: .9rem; padding-left: .85rem; border-left: 2px solid var(--rule); line-height: 1.6; }
+    footer { border-top: 1px solid var(--rule); padding: 2.2rem 2rem; text-align: center; font-size: .76rem; color: var(--muted); font-family: 'DM Mono', monospace; letter-spacing: .03em; }
+    @media (max-width: 580px) { .role-grid, .link-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -267,14 +101,14 @@
 
 <main>
 
-  <!-- ABOUT -- gold/earth -->
+  <!-- ABOUT -->
   <section class="e-gold">
     <p class="eyebrow">About</p>
     <p class="body-text">I work at the intersection of systems thinking, contemplative practice, and human-AI co-evolution, treating technological development as both rigorous research and a practice in awareness.</p>
     <p class="body-text">My approach integrates systems engineering with diverse disciplines, exploring how intelligence, consciousness and technology inform each other. I balance intensive research with embodied practice.</p>
   </section>
 
-  <!-- CURRENT ROLES -- teal/water -->
+  <!-- CURRENT ROLES -->
   <section class="e-teal">
     <p class="eyebrow">Current Roles</p>
     <h2>Positions</h2>
@@ -288,17 +122,13 @@
         <span class="role-org"><a href="https://ronin-institute.org">Center for Systems, Knowledge Representation &amp; Neuroscience, Ronin Institute</a></span>
       </div>
       <div class="role-item">
-        <span class="role-label">Editor-in-Chief</span>
-        <span class="role-org">Anthropomorphic Press (indexed in Dow Jones Factiva)</span>
-      </div>
-      <div class="role-item">
-        <span class="role-label">Mixed Media Sculptor</span>
+        <span class="role-label">Creative Designer and Curator</span>
         <span class="role-org"><a href="https://visualartsscotland.org">Visual Arts Scotland</a> &mdash; as PVB</span>
       </div>
     </div>
   </section>
 
-  <!-- ACTIVE PROJECTS -- coral/fire -->
+  <!-- ACTIVE PROJECTS -->
   <section class="e-coral">
     <p class="eyebrow">Active Projects</p>
     <h2>Current Work</h2>
@@ -309,7 +139,7 @@
       </a>
       <a class="link-card" href="https://starborn.github.io/researchOps/">
         <span class="card-title">Research Ops</span>
-        <span class="card-desc"> Research Operations Resources.</span>
+        <span class="card-desc">Research Operations Resources.</span>
       </a>
       <a class="link-card" href="https://starborn.github.io/MCP-Model-Card-Generator/">
         <span class="card-title">MCP Model Card Specification v1.0</span>
@@ -326,7 +156,7 @@
     </div>
   </section>
 
-  <!-- TEACHING -- rose/air -->
+  <!-- TEACHING -->
   <section class="e-rose">
     <p class="eyebrow">Teaching &amp; Course Materials</p>
     <h2>Teaching</h2>
@@ -359,7 +189,7 @@
     <p class="foot-note">Available for contract teaching, curriculum design, and workshop facilitation. Multilingual delivery &mdash; English, Italian, French.</p>
   </section>
 
-  <!-- BOOKS & CHAPTERS -- violet/space -->
+  <!-- BOOKS & CHAPTERS -->
   <section class="e-violet">
     <p class="eyebrow">Books &amp; Monographs</p>
     <h2>Books, Chapters &amp; Columns</h2>
@@ -385,17 +215,13 @@
         <span class="pub-venue"><a href="https://www.buddhistdoor.net/author/paola-di-maio/">Buddhistdoor Global, 2016&ndash;2023</a> &mdash; Noble Eightfold Path mapped to systems engineering and technology ethics</span>
       </li>
       <li>
-        <span class="pub-title">Anthropomorphic Press &mdash; AI Journalism Column <span class="pill pill-rose">Ongoing</span></span>
-        <span class="pub-venue"><a href="https://claudepress.substack.com">claudepress.substack.com</a> &mdash; indexed in Dow Jones Factiva</span>
-      </li>
-      <li>
         <span class="pub-title"><a href="https://ronininstitute.academia.edu/PaolaDiMaio/CurriculumVitae">Full list of publications and book contributions &rarr;</a></span>
         <span class="pub-venue">Ronin Institute Academia.edu &mdash; 103 papers, 4 books, 4 teaching documents</span>
       </li>
     </ul>
   </section>
 
-  <!-- TALKS & KEYNOTES -- gold/earth -->
+  <!-- TALKS & KEYNOTES -->
   <section class="e-gold">
     <p class="eyebrow">Talks &amp; Keynotes</p>
     <h2>Selected Talks</h2>
@@ -424,7 +250,7 @@
     <p class="foot-note">Additional talks at IEEE SysCon, ISIC, iCAST, W3C workshops, and Ontolog Forum. Full list on <a href="https://sites.google.com/view/paoladimaiophd/talks">Google Sites portfolio</a>.</p>
   </section>
 
-  <!-- CONSULTING -- teal -->
+  <!-- CONSULTING -->
   <section class="e-teal">
     <p class="eyebrow">Consulting</p>
     <h2>Consulting &amp; Advisory</h2>
@@ -443,7 +269,7 @@
     </div>
   </section>
 
-  <!-- ACADEMIC PROFILES -- violet -->
+  <!-- ACADEMIC PROFILES -->
   <section class="e-violet">
     <p class="eyebrow">Academic Profiles</p>
     <h2>Academic Presence</h2>
@@ -475,7 +301,7 @@
     </div>
   </section>
 
-  <!-- SELECTED PUBLICATIONS -- coral -->
+  <!-- SELECTED PUBLICATIONS -->
   <section class="e-coral">
     <p class="eyebrow">Selected Publications</p>
     <h2>Publications</h2>
@@ -515,7 +341,7 @@
     </ul>
   </section>
 
-  <!-- STANDARDS & COMMUNITY -- rose -->
+  <!-- STANDARDS & COMMUNITY -->
   <section class="e-rose">
     <p class="eyebrow">Standards &amp; Community</p>
     <h2>Standards &amp; Open Source</h2>
@@ -527,10 +353,6 @@
       <a class="link-card" href="https://github.com/Starborn">
         <span class="card-title">GitHub &mdash; Starborn</span>
         <span class="card-desc">Open-source tools including COPP, MCP Model Card Generator, WebMCP tooling, and bias detection research.</span>
-      </a>
-      <a class="link-card" href="https://claudepress.substack.com">
-        <span class="card-title">Anthropomorphic Press &mdash; Substack</span>
-        <span class="card-desc">AI journalism on machine consciousness, ethics, and human-AI co-evolution. Indexed in Dow Jones Factiva.</span>
       </a>
       <a class="link-card" href="https://sites.google.com/view/paoladimaiophd/home">
         <span class="card-title">Personal Research Site</span>
