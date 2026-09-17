@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae | Paola Di Maio, PhD</title>
+  <meta name="description" content="Curriculum vitae of Paola Di Maio, PhD. Independent researcher and consultant in systems engineering, knowledge representation and AI standards.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f0e8; --surface: #fdfaf4; --ink: #2e2820; --muted: #7a6f62; --rule: #ddd5c5;
+      --gold: #b8852a; --teal: #3a7e7a; --coral: #b85a42; --rose: #9e5a72; --violet: #6e5a8a;
+      --w: 820px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); font-size: 18px; line-height: 1.65; }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+    .toolbar { max-width: var(--w); margin: 0 auto; padding: 1rem 2rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .toolbar a { font-size: .85rem; }
+    .btn { font: inherit; font-size: .85rem; padding: .45rem 1rem; border-radius: 6px; border: 1px solid var(--gold); background: var(--gold); color: var(--surface); cursor: pointer; }
+    .btn:hover { opacity: .9; }
+
+    .sheet { max-width: var(--w); margin: 1rem auto 3rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+    .rainbow-bar { height: 3px; background: linear-gradient(to right, var(--gold) 0% 20%, var(--teal) 20% 40%, var(--coral) 40% 60%, var(--rose) 60% 80%, var(--violet) 80% 100%); opacity: .75; }
+    .inner { padding: 2.6rem 2.6rem 2.2rem; }
+
+    header h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.15; letter-spacing: .01em; }
+    .credentials { font-style: italic; color: var(--muted); font-size: .9rem; margin-top: .2rem; }
+    .role { font-family: 'DM Mono', monospace; font-size: .78rem; color: var(--gold); letter-spacing: .04em; margin-top: .5rem; }
+    .contact { display: flex; flex-wrap: wrap; gap: .2rem 1.4rem; font-size: .82rem; margin-top: .9rem; padding: .55rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+
+    section { margin-top: 1.9rem; break-inside: auto; }
+    h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 1.35rem; color: var(--ink); padding-bottom: .2rem; border-bottom: 1px solid var(--rule); margin-bottom: .6rem; }
+    p { font-size: .9rem; }
+    ul.bul { padding-left: 1.1rem; font-size: .88rem; }
+    ul.bul li { margin-bottom: .3rem; }
+    ul.bul li::marker { color: var(--gold); }
+
+    .entry { padding: .55rem 0; break-inside: avoid; }
+    .entry + .entry { border-top: 1px dotted var(--rule); }
+    .head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    .title { font-weight: 500; font-size: .92rem; }
+    .org { font-style: italic; color: var(--muted); font-size: .86rem; }
+    .dates { font-size: .78rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .detail { font-size: .85rem; color: #4d453b; margin-top: .15rem; }
+    .detail ul { margin-top: .2rem; }
+    .note { font-size: .82rem; font-style: italic; color: var(--muted); margin-top: .4rem; }
+
+    .links { display: grid; grid-template-columns: 1fr 1fr; gap: .1rem 1.6rem; font-size: .84rem; }
+    .links div { padding: .25rem 0; border-bottom: 1px dotted var(--rule); }
+    .kv div { font-size: .88rem; padding: .25rem 0; }
+    .kv b { font-weight: 500; margin-right: .35rem; }
+    .foot { margin-top: 2rem; text-align: center; font-size: .8rem; font-style: italic; color: var(--muted); }
+
+    @media (max-width: 600px) {
+      .inner { padding: 1.8rem 1.3rem; }
+      .links { grid-template-columns: 1fr; }
+      .head { flex-direction: column; gap: 0; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 14mm 15mm; }
+      html { font-size: 10.5pt; }
+      body { background: #fff; font-size: 10.5pt; line-height: 1.42; }
+      .toolbar { display: none; }
+      .sheet { border: none; margin: 0; max-width: none; border-radius: 0; }
+      .inner { padding: 0; }
+      .rainbow-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin-bottom: 10pt; }
+      a { color: var(--ink); }
+      section { margin-top: 9pt; }
+      .entry { padding: 2.5pt 0; }
+      ul.bul li { margin-bottom: 1pt; }
+      .contact { margin-top: 5pt; padding: 3pt 0; }
+      h2 { margin-bottom: 3pt; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html">Back to homepage</a>
+  <button class="btn" type="button" onclick="window.print()">Print or save as PDF</button>
+</div>
+
+<article class="sheet">
+  <div class="rainbow-bar"></div>
+  <div class="inner">
+
+    <header>
+      <h1>Paola Di Maio, PhD</h1>
+      <p class="credentials">PhD, Systems Engineering; MSc, Information Systems</p>
+      <p class="role">Independent researcher, analyst and consultant</p>
+      <div class="contact">
+        <a href="mailto:paola.dimaio@gmail.com">paola.dimaioATgmailDOTcom</a>
+        <a href="https://orcid.org/0000-0003-0770-3713">ORCID 0000-0003-0770-3713</a>
+        <a href="https://starborn.github.io">starborn.github.io</a>
+        <a href="https://github.com/Starborn">github.com/Starborn</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>Independent researcher, analyst and subject matter expert, working on contract as academic faculty and technical author. My research covers complexity management and sociotechnical systems, including AI knowledge representation, neurosymbolic AI and agent interoperability standards, with peer-reviewed outputs and standards contributions. I design and deliver technical curricula that connect AI, neuroscience, standards engineering and field operations for postgraduate, corporate and technical audiences, and I write and publish business intelligence advisories.</p>
+    </section>
+
+    <section>
+      <h2>Core Competencies</h2>
+      <ul class="bul">
+        <li><b>Systems analysis, design and specification</b> as an independent consultant.</li>
+        <li><b>Research</b> in neurosymbolic AI, agent interoperability, knowledge representation, sociotechnical systems analysis, interdisciplinary knowledge integration, algorithmic auditing, ontology alignment and digital forensics.</li>
+        <li><b>Technical authoring</b> of documentation, manuals, specifications, scholarly publications and standards-compliant content.</li>
+        <li><b>Teaching and curriculum</b> development for postgraduate and professional audiences; examiner and thesis advisor.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Research, Consulting &amp; Publishing</h2>
+      <div class="entry">
+        <div class="head"><span class="title">Independent Researcher, Analyst &amp; Subject Matter Expert</span><span class="dates">2001 to present</span></div>
+        <div class="org">Digital publishing, learning and information architecture</div>
+        <div class="detail">
+          <ul class="bul">
+            <li>Lead scientific and technical enquiry across systems engineering, AI and interdisciplinary topics; publish proceedings and technical notes.</li>
+            <li>Author and publish business intelligence advisories.</li>
+            <li>Design and deliver technical training programmes for postgraduate and professional audiences.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Principal Analyst</span><span class="dates">Current</span></div>
+        <div class="org">Content Wire</div>
+        <div class="detail">AI and technology intelligence feed in NITF format, distributed through Dow Jones Factiva and Newstex.</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Business Intelligence &amp; Operations Manager</span><span class="dates">2001 to 2014</span></div>
+        <div class="detail">Management and technical roles for EU, UK, international and global companies worldwide, covering IT, operations and logistics. Systems analysis, algorithmic audits and process automation consulting.</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Newsletter Editor &amp; Digital Publisher</span></div>
+        <div class="detail">New technologies and publishing.</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Library Systems Analyst</span></div>
+        <div class="detail">Library services and technologies; indexing automation.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Academic Appointments</h2>
+      <div class="entry">
+        <div class="head"><span class="title">Postdoctoral Researcher</span><span class="dates">2018 to 2019</span></div>
+        <div class="org">National Cheng Kung University, Taiwan</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Guest Lecturer</span><span class="dates">2014 to 2018</span></div>
+        <div class="org">College of Pharmacy, Mandi, India</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Visiting Faculty</span><span class="dates">2012 to 2014</span></div>
+        <div class="org">Indian Institute of Technology Mandi, India</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Senior Lecturer, College of IT</span><span class="dates">2004 to 2009</span></div>
+        <div class="org">Mae Fah Luang University and Prince of Songkla University, Thailand</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">Lecturer</span><span class="dates">1995 to 2004</span></div>
+        <div class="org">South Bank University and South Thames College, London</div>
+      </div>
+      <p class="note">Additional faculty and guest lecturing appointments at multiple institutions, 2009 to 2019.</p>
+    </section>
+
+    <section>
+      <h2>Standards Contributions</h2>
+      <ul class="bul">
+        <li><b>Chair</b>, <a href="https://www.w3.org/community/aikr/">W3C AI Knowledge Representation Community Group</a>, 2018 to present.</li>
+        <li><b>Contributor</b>, IEEE P7000 series. Listed in the <a href="https://standards.ieee.org/wp-content/uploads/import/documents/other/ec_bios.pdf">Ethically Aligned Design First Edition committees</a>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected Publications &amp; Talks</h2>
+      <p>Peer-reviewed publications in <i>Brain Informatics</i> (Springer LNCS), IEEE venues, MIT Press and Santa Fe Institute (sociotechnical complexity). Conference presentations at IFLA (keynote, Singapore 2014), Brain Informatics (2019, 2021), Academia Sinica with the Neuroscience Society (2021) and Brain Initiative (2024). Full publication list on <a href="https://orcid.org/0000-0003-0770-3713">ORCID</a> and <a href="https://www.scopus.com/authid/detail.uri?authorId=8524511000">Scopus</a>.</p>
+    </section>
+
+    <section>
+      <h2>Tools &amp; Portfolio</h2>
+      <ul class="bul">
+        <li><a href="https://github.com/Starborn"><b>GitHub, Starborn</b></a>: open-source tools including Code Safety Checker, Terminology Engineering Platform, ResearchOps Hub and WebMCP Model Card Generator.</li>
+        <li><a href="https://coevo.vercel.app"><b>COEVO</b></a>: interactive research visualiser for the neural co-evolution hypothesis.</li>
+        <li><a href="https://huggingface.co/spaces/STARBORN/AICELS"><b>AICELS on Hugging Face</b></a>: automated code quality analysis and learning tool.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Qualifications</h2>
+      <div class="entry">
+        <div class="head"><span class="title">PhD, Systems Engineering</span><span class="dates">2009 to 2012</span></div>
+        <div class="org">University of Strathclyde, UK</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">MSc, Information Systems</span><span class="dates">1999 to 2001</span></div>
+        <div class="org">University of Kent at Canterbury, UK</div>
+        <div class="detail">Knowledge-based and expert systems engineering.</div>
+      </div>
+      <div class="entry">
+        <div class="head"><span class="title">BA, International Business and Modern Languages</span></div>
+        <div class="org">South Bank University, London</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Scholarly Profiles</h2>
+      <div class="links">
+        <div><a href="https://orcid.org/0000-0003-0770-3713">ORCID</a></div>
+        <div><a href="https://www.scopus.com/authid/detail.uri?authorId=8524511000">Scopus (Author ID 8524511000)</a></div>
+        <div><a href="https://scholar.google.com/citations?user=NzExJ_QAAAAJ&amp;hl=en">Google Scholar</a></div>
+        <div><a href="https://www.researchgate.net/profile/Paola-Di-Maio-dr">ResearchGate</a></div>
+        <div><a href="https://dblp.org/pid/45/10043.html">DBLP</a></div>
+        <div><a href="https://loop.frontiersin.org/people/892066/overview">Frontiers Loop</a></div>
+        <div><a href="https://www.scilit.com/scholars/7220778">Scilit</a></div>
+        <div><a href="https://figshare.com/authors/Paola_Di_maio/505866">Figshare</a></div>
+        <div><a href="https://sites.google.com/view/paoladimaiophd">Academic site</a></div>
+        <div><a href="https://ronininstitute.academia.edu/PaolaDiMaio">Academia.edu</a></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Languages &amp; Other Interests</h2>
+      <div class="kv">
+        <div><b>Languages</b>English and Italian (bilingual); German and Spanish (fluent); Mandarin (beginner).</div>
+        <div><b>Other</b>Yoga Alliance registered teacher; Taiwan Tai Chi Union instructor, London.</div>
+      </div>
+    </section>
+
+    <p class="foot">References and extended portfolio available on request.</p>
+
+  </div>
+</article>
+
+</body>
+</html>
