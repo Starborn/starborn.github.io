@@ -3,115 +3,138 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Curriculum Vitae | Paola Di Maio, PhD</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<title>Paola Di Maio, PhD · Academic CV</title>
+<meta name="description" content="Academic CV of Paola Di Maio, PhD: research in AI knowledge representation and systems engineering, teaching, expert evaluation, standards and publications.">
+<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#1b1b1b; --soft:#555; --rule:#c9c9c9; --accent:#1f3a5f; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:#fff; color:var(--ink); font-family:'EB Garamond', Garamond, Georgia, serif; font-size:11.4pt; line-height:1.38; }
-  .page { max-width:200mm; margin:0 auto; padding:14mm 16mm; }
-  .nav { font-size:10pt; margin-bottom:6mm; display:flex; justify-content:space-between; }
-  .nav a, .nav button { color:var(--accent); background:none; border:0; font:inherit; cursor:pointer; padding:0; text-decoration:underline; }
-  header { display:grid; grid-template-columns:1fr auto; gap:4mm 10mm; align-items:end; border-bottom:1.5px solid var(--accent); padding-bottom:3mm; }
-  h1 { font-size:24pt; font-weight:500; margin:0; letter-spacing:.3px; }
-  .tag { color:var(--soft); font-style:italic; margin-top:1mm; }
-  .contact { text-align:right; font-size:10pt; line-height:1.45; }
-  .contact a { color:var(--ink); text-decoration:none; }
-  h2 { font-size:10.5pt; font-weight:600; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent); margin:5mm 0 1.6mm; border-bottom:.6px solid var(--rule); padding-bottom:.8mm; }
-  p { margin:0 0 1.6mm; }
-  ul { margin:0; padding-left:4.5mm; }
-  li { margin:0 0 .9mm; }
-  .item { margin:0 0 2mm; }
-  .row { display:flex; justify-content:space-between; gap:6mm; }
-  .what { font-weight:600; }
-  .where { font-style:italic; }
-  .when { color:var(--soft); white-space:nowrap; font-size:10.4pt; }
-  .two { display:grid; grid-template-columns:1fr 1fr; gap:0 9mm; }
-  a { color:var(--accent); }
-  .small { font-size:10pt; color:var(--soft); }
-  @media (max-width:640px) {
-    .page { padding:16px; }
-    header, .two { grid-template-columns:1fr; }
-    .contact { text-align:left; }
-    .row { flex-direction:column; gap:0; }
-  }
-  @media print {
-    @page { size:A4; margin:10mm 13mm; }
-    .nav { display:none; }
-    .page { padding:0; max-width:none; }
-    body { font-size:10pt; line-height:1.26; }
-    h2 { margin-top:3mm; } .item { margin-bottom:1.4mm; }
-    a { color:var(--ink); text-decoration:none; }
-  }
+  body { margin:0; background:#fff; color:#111; font:10.6pt/1.4 "Tinos", "Cambria", Georgia, serif; }
+  .page { max-width:780px; margin:0 auto; padding:34px 40px 48px; }
+  nav { font-size:9pt; margin-bottom:18px; }
+  nav a { margin-right:14px; }
+  h1 { font:700 25pt/1.05 "Tinos", serif; margin:0 0 4px; letter-spacing:.01em; }
+  .contact { font-size:9.4pt; margin-bottom:8px; }
+  .profile { font-style:italic; margin:8px 0 4px; }
+  h2 { font:700 13.5pt/1.2 "Tinos", serif; text-transform:uppercase; margin:18px 0 6px; padding-bottom:2px; border-bottom:1.3px solid #111; }
+  h3 { font:700 10.8pt/1.3 "Tinos", serif; margin:11px 0 3px; }
+  ul { margin:2px 0 4px; padding-left:22px; }
+  li { margin:1px 0; }
+  p { margin:3px 0; }
+  .pub p { margin:0 0 5px; }
+  .links a { white-space:nowrap; }
+  a { color:#111; text-decoration-color:#888; }
+  a:hover { text-decoration-color:#111; }
+  .foot { margin-top:24px; font-size:9.6pt; border-top:1px solid #bbb; padding-top:6px; }
+  @media (max-width:600px) { .page { padding:22px 18px 36px; } h1 { font-size:20pt; } }
+  @media print { nav { display:none; } .page { padding:0; max-width:none; } h2, h3 { break-after:avoid; } .pub p, li { break-inside:avoid; } }
+  @page { size:A4; margin:16mm 17mm; }
 </style>
 </head>
-<body>
-<div class="page">
-  <div class="nav"><a href="index.html">Back to homepage</a><button onclick="window.print()">Print or save as PDF</button></div>
-  <header>
-    <div>
-      <h1>Paola Di Maio, PhD</h1>
-    </div>
-    <div class="contact">
-      <a href="https://starborn.github.io">starborn.github.io</a><br>
-      <a href="https://github.com/Starborn">github.com/Starborn</a><br>
-      <a href="https://www.linkedin.com/in/paoladimaio/">linkedin.com/in/paoladimaio</a>
-    </div>
-  </header>
+<body><div class="page">
 
-  <h2>Summary</h2>
-  <p>Systems engineer (PhD, University of Strathclyde, 2012), expert, academic advisor and solo founder, with a track record of developing intelligent applications, research and learning apps, and scientific publications.</p>
-  <p class="small">Publications: <a href="https://orcid.org/0000-0003-0770-3713">ORCID</a> &middot; <a href="https://scholar.google.com/citations?user=NzExJ_QAAAAJ&amp;hl=en">Google Scholar</a> &middot; <a href="https://www.scopus.com/authid/detail.uri?authorId=8524511000">Scopus</a></p>
+<nav><a href="index.html">Home</a><a href="index.html#consulting">Consulting</a><a href="index.html#schools">Teaching</a><a href="methods.html">Methods</a></nav>
 
-  <h2>Highlights</h2>
-  <div class="two">
-    <div>
-      <p><b>Papers</b></p>
-      <ul>
-        <li>Looking Ahead: The Role of Neuro-Symbolic Knowledge Representation in Human and Machine Co-Evolution, book chapter, Elsevier, in press</li>
-        <li><a href="https://arxiv.org/abs/2512.12970">Towards Open Standards for Systemic Complexity in Digital Forensics</a>, arXiv, 2025</li>
-        <li><a href="https://link.springer.com/chapter/10.1007/978-3-030-86993-9_8">System Level Knowledge Representation for Metacognition in Neuroscience</a>, Brain Informatics, Springer LNCS, 2021</li>
-        <li>COPP citizen science pipeline for anomalous luminous phenomena, <i>Journal of Scientific Exploration</i></li>
-        <li>Just Enough Ontology: a systems engineering approach to ontology development, WIMS'11, ACM, 2011</li>
-      </ul>
-    </div>
-    <div>
-      <p><b>Talks, projects and tools</b></p>
-      <ul>
-        <li>Keynote, Knowledge Engineering for Library and Information Systems, IFLA Satellite Workshop, Singapore, 2014</li>
-        <li>Talk on e-commerce vocabularies and AI agent interoperability, W3C/GS1 workshop hosted by Google, Zurich, 2026 (<a href="https://drive.google.com/file/d/1VojveZTZFmzSkjOA_RiHin0eJenUNlMS/view">recording</a>, <a href="https://www.w3.org/2026/09/ecommerce-agents/slides/Paola_Di_Maio.pdf">slides</a>)</li>
-        <li>Talk on web standards for naturally responsive voice interaction, W3C Workshop on Smart Voice Agents, 2026 (<a href="https://www.youtube.com/watch?v=gB7IHey8o_Q">video</a>)</li>
-        <li><a href="https://zenodo.org/records/22332633">Ecommerce AI Agent Ontology</a>, open ontology</li>
-        <li><a href="https://starborn.github.io/MCP-Model-Card-Generator/">MCP Model Card Specification</a> and open-source generator</li>
-        <li><a href="https://solo-founder-school.vercel.app/">Solo Founder Startup School</a> and <a href="https://open-scholarship-school.vercel.app/">School of Open Scholarship</a></li>
-      </ul>
-    </div>
-  </div>
+<h1>PAOLA DI MAIO, PhD</h1>
+<div class="contact">Epistemic Systems Lab (ESL), Ronin Institute for Independent Scholarship · paola.dimaio@gmail.com · <a href="https://orcid.org/0000-0003-0770-3713">ORCID 0000-0003-0770-3713</a> · <a href="https://starborn.github.io">starborn.github.io</a></div>
 
-  <h2>Currently working on executive briefings and tools</h2>
-  <div class="item">
-    <p><b>Agent compliance and interoperability</b> (report, tools live). Compliance intelligence for firms deploying AI agents: the <a href="https://payhip.com/b/sFqC0"><i>Global AI Regulatory Environment</i></a> briefing, a cross-framework regulatory crosswalk and a decision-support tool, with a self-assessment and checklist app in design.</p>
-  </div>
-  <div class="item">
-    <p><b>Smart voice agents</b> (research report and interactive map of emerging technologies). Buyer-side intelligence on voice AI vendors for banks, insurers and healthcare: a report covering about thirty vendors and an interactive vendor map, alongside a published feed series on the sector.</p>
-  </div>
+<p class="profile">Researcher in AI knowledge representation and systems engineering, with three decades of teaching, publishing and expert evaluation across Europe and Asia.</p>
 
-  <h2>Track record</h2>
-  <ul>
-    <li><b>Business intelligence</b>: daily intelligence feeds on AI, finance and regulation, licensed to Dow Jones Factiva, and in-depth executive briefings.</li>
-    <li><b>W3C</b>: chair of the AI Knowledge Representation CG.</li>
-    <li><b>Expert on call</b>.</li>
-    <li><b>Journalism</b>: Science and Technology Correspondent (London and international).</li>
-    <li><b>Faculty</b>: international faculty assignments on contract (<a href="https://starborn.github.io/#teaching">teaching portfolio</a>); develop and deliver graduate and corporate training in science and technology; design, deliver and maintain open science and replicability initiatives.</li>
-    <li><b>Entrepreneurship</b>: ran the <a href="https://www.slideshare.net/slideshow/sustainable-entrepreneurship/13617365">Sustainable Entrepreneurship</a> initiative, Edinburgh and San Francisco, 2012; participant in the Stanford Asia Forum in Mumbai with Larry Diamond and Vivek Srinivasan.</li>
-    <li><b>Right livelihood</b>: researches and writes on right livelihood and mindful technology, e.g. <a href="https://www.buddhistdoor.net/features/mindful-technology-for-right-livelihood-foundations-and-examples/">Buddhistdoor Global</a>.</li>
-    <li><b>Mentoring</b>: member and mentor of <a href="https://www.womeninneurotech.org/">Women in Neurotech</a> initiatives, a global community.</li>
-    <li><b>Protocols</b>: develop, curate and maintain research protocols.</li>
-  </ul>
+<h2>Scholarly Profiles</h2>
+<p class="links"><a href="https://orcid.org/0000-0003-0770-3713">ORCID</a> · <a href="https://www.scopus.com/authid/detail.uri?authorId=8524511000">Scopus</a> · <a href="https://scholar.google.com/citations?user=NzExJ_QAAAAJ&amp;hl=en">Google Scholar</a> · <a href="https://dblp.org/pid/45/10043">DBLP</a> · <a href="https://ieeexplore.ieee.org/author/37594125200">IEEE Xplore</a> · <a href="https://www.semanticscholar.org/author/Paola-Di-Maio/144976161">Semantic Scholar</a> · <a href="https://www.researchgate.net/profile/Paola-Di-Maio-dr">ResearchGate</a> · <a href="https://loop.frontiersin.org/people/892066/overview">Frontiers Loop</a> · <a href="https://www.scilit.com/scholars/7220778">Scilit</a> · <a href="https://figshare.com/authors/Paola_Di_Maio/505866">Figshare</a> · <a href="https://www.cutter.com/experts/paola-di-maio">Cutter expert profile</a> · <a href="https://www.merlot.org/merlot/viewMember.htm?id=1378802">MERLOT</a></p>
 
-  <h2>Working method</h2>
-  <p>Structured analysis and design, knowledge and systems modelling.</p>
+<h2>Qualifications</h2>
+<h3>University of Strathclyde (2009–2012)</h3>
+<p>PhD Systems Engineering, Department of Design, Manufacture and Engineering Management</p>
+<h3>Certificates</h3>
+<p>FAA TRUST, Recreational UAS Safety Test (drone pilot), Drone Trust, 2026</p>
+<p>Anthropic Academy: Claude Code in Action; Model Context Protocol: Advanced Topics (2026)</p>
+
+<h2>Current Roles</h2>
+<h3>Research Lead, Epistemic Systems Lab (2018–present)</h3>
+<ul>
+  <li>Research in AI knowledge representation, neurosymbolic AI, and the interoperability and trust of AI agents</li>
+  <li>Author of the Agentic AI Ontology (AIAO) and the AI agent trust record; system level knowledge representation for neuroscience data in an EBRAINS project</li>
+</ul>
+<h3>Chair, <a href="https://www.w3.org/community/aikr/">W3C AI Knowledge Representation Community Group</a> (2018–present); W3C invited expert</h3>
+<h3>Publisher, science and technology intelligence feed, Dow Jones Factiva (2002–present)</h3>
+<h3>Research Evaluation Expert, European Research Executive Agency (REA), on contract (2018–present)</h3>
+<h3>Independent consultant and online teacher, on contract</h3>
+<ul>
+  <li>Consulting: systems analysis and specification, algorithmic audit and AI evaluation, knowledge modelling and ontology development, business intelligence advisories. Profile: <a href="index.html#consulting">starborn.github.io/#consulting</a></li>
+  <li>Teaching portfolio: <a href="index.html#schools">starborn.github.io/#schools</a>, including the <a href="https://open-scholarship-school.vercel.app/">School of Open Scholarship</a>, <a href="https://data-coding-school.vercel.app/">Data Coding for Researchers</a>, the <a href="https://solo-founder-school.vercel.app/">Solo Founder Startup School</a> and <a href="https://ccar-f-course-app-v2.vercel.app/">CCAR-F Exam Prep</a>; executive training in knowledge modelling</li>
+  <li>Faculty examiner, thesis advisor and project evaluator</li>
+</ul>
+
+<h2>Professional History</h2>
+<h3>Research</h3>
+<p><b>Postdoctoral Researcher</b>, Department of Mechanical Engineering, National Cheng Kung University, Taiwan (2018–2019): systems awareness and cognitive architectures for sensing systems</p>
+<p><b>Research Director</b>, <a href="https://sites.google.com/view/institute-for-socio-technical-/home">ISTCS.org, Institute for Socio Technical Complex Systems</a>, Edinburgh (2009–2018, continued as the Epistemic Systems Lab): independent research and consulting institute with international members, including Dr Han Woo Park in Korea; ICT for women and sustainability pilot in Himachal Pradesh with IIT Mandi; open access monitoring and linked data benchmarking</p>
+<p><b>PhD Research</b>, Department of Design, Manufacture and Engineering Management, University of Strathclyde (2009–2012), EPSRC Doctoral Training Award: knowledge sharing and open access in systems engineering research; Open Access Monitor applied to 100 EPSRC-funded projects; Joint Optimization Metamodel and Knowledge Audit Framework</p>
+
+<h3 style="margin-top:12px">Teaching</h3>
+<p><b>Guest Lecturer</b>, College of Pharmacy, Mandi, India (2012–2014)</p>
+<p><b>Visiting Faculty</b>, Indian Institute of Technology Mandi, India (2012–2014): socio technical complex systems design and engineering</p>
+<p><b>Seminar</b>, EUSECS (INCOSE), KTH Royal Institute of Technology, Stockholm (2010)</p>
+<p><b>Senior Lecturer, College of IT</b>, Mae Fah Luang University and Prince of Songkla University, Thailand (2004–2009): software and systems engineering, quality assurance, usability design</p>
+<p><b>Lecturer</b>, South Bank University and South Thames College, London (1995–2004): information systems and operations</p>
+<p>Topics: theory and philosophy of open science, research methods, AI and knowledge representation, structured analysis and design, CommonKADS, use case notation, object modelling and model-driven engineering.</p>
+
+<h3 style="margin-top:12px">Expert, editorial and standards</h3>
+<p><b>Analyst, Author and Expert</b>, Cutter Consortium, now part of Arthur D. Little (2003–2011): executive reports and updates on business intelligence and systems engineering, including the Semantic Data Models report (2007) and From the Database to the Datastream (2009), alongside Tom DeMarco and Stephen Mellor, authors of the structured analysis and design methods. <a href="https://www.cutter.com/experts/paola-di-maio">Cutter expert profile</a></p>
+<p><b>Guest Editor</b>, <i>Semantic Web</i> journal (2015): Special Issue on Semantic Web Interfaces, with R. García and H. Paulheim; initiated the issue and wrote the call for papers</p>
+<p><b>Contributor</b>, <a href="https://www.w3.org/2005/Incubator/eiif/XGR-Framework/">W3C Emergency Information Interoperability Frameworks</a> (2008–2009)</p>
+<p><b>Contributor</b>, IEEE P7003, published as <a href="https://standards.ieee.org/ieee/7003/11357">IEEE 7003-2024 Standard for Algorithmic Bias Considerations</a></p>
+<p><b>Committee member</b>, Classical Ethics in A/IS and Glossary, <a href="https://standards.ieee.org/wp-content/uploads/import/documents/other/ec_bios.pdf">IEEE Ethically Aligned Design, First Edition</a></p>
+
+<h2>Research Skills and Methods</h2>
+<ul>
+  <li>Systems analysis and design: structured analysis and design (SASD), use cases, object and model-driven methods</li>
+  <li>Knowledge engineering with CommonKADS and MAS-CommonKADS; ontology development and knowledge representation</li>
+  <li>Metamodelling and socio technical systems analysis; formal concept analysis</li>
+  <li>Mixed methods research, evidence-based research and literature-based gap analysis</li>
+  <li>Overview: <a href="methods.html">starborn.github.io/methods.html</a></li>
+</ul>
+
+<h2>Keynotes and Invited Talks</h2>
+<div class="pub">
+<p>Keynote: Linked Data Beyond Libraries, Universal Interfaces and Knowledge Unification. UILLD Workshop, IFLA Congress, Singapore, 2013</p>
+<p>Stanford Asia Forum, Mumbai, 2014</p>
+<p>Knowledge representation bridging AI and neuroscience. Brain Informatics, Haikou, 2019</p>
+<p>Oral presentation, Taiwan Society for Neuroscience, Academia Sinica, Taipei, 2020</p>
+<p>Neurocorrelates of Free Will Revisited. Neuromatch Conference 3.0, 2020</p>
+<p>Systemic Deviation and Active Inference. Active Inference Institute livestream, 2025 (<a href="https://www.youtube.com/watch?v=TKksAVCOUCU">recording</a>)</p>
+<p>W3C Workshop on Smart Voice Agents, 2026 (speaker)</p>
+<p>Standard Vocabularies for E-commerce: an Overview, and the Interoperability Gap for AI Agents. W3C/GS1 Workshop on E-commerce for Humans and AI Agents, Zurich, 2026</p>
+<p>Agentic AI Ontology. W3C Autonomous Agents on the Web Community Group (invited)</p>
+<p>Trust anchors for the agentic web. TPAC 2026, Dublin (breakout session)</p>
 </div>
-</body>
+
+<h2>Selected Publications</h2>
+<div class="pub">
+<p>Di Maio P. 2026. Citizen Orb Photometry Pipeline (COPP): A Standardized Method for Computational Analysis of Anomalous Luminous Phenomena from Consumer Video Captures. <i>Journal of Scientific Exploration</i> 40(3): 336–351. doi:10.31275/20263985</p>
+<p>Di Maio P. In production. Looking Ahead: The Role of Neuro-Symbolic Knowledge Representation in Human and Machine Co-Evolution. Book chapter, Elsevier</p>
+<p>Di Maio P. 2022. System Level Knowledge Representation for Edge Intelligence. In <i>Artificial Intelligence for Cloud and Edge Computing</i>, Internet of Things series, Springer: 255–275</p>
+<p>Di Maio P. 2021. System-level knowledge representation for artificial intelligence during pandemics. In <i>Leveraging Artificial Intelligence in Global Epidemics</i>, Elsevier</p>
+<p>Di Maio P. 2021. System Level Knowledge Representation for Complexity. IEEE International Systems Conference (SysCon 2021): 1–6</p>
+<p>Di Maio P. 2021. System Level Knowledge Representation for Metacognition in Neuroscience. Brain Informatics 2021, Springer LNCS: 79–88</p>
+<p>Di Maio P. 2021. Knowledge Representation for Algorithmic Auditing to Detangle Systemic Bias. International Semantic Intelligence Conference (ISIC 2021): 149–157</p>
+<p>Di Maio P. 2018. Towards Universal Systems Awareness. 9th International Conference on Awareness Science and Technology (iCAST 2018): 7–15</p>
+<p>García R, Paulheim H, Di Maio P. 2015. Special Issue on Semantic Web Interfaces. <i>Semantic Web</i> 6(3): 213–214</p>
+<p>Di Maio P. 2015. Linked data beyond libraries: towards universal interfaces and knowledge unification. In <i>Linked Data and User Interaction: The Road Ahead</i>, IFLA Publications 162, De Gruyter</p>
+<p>Di Maio P. 2014. Towards a Metamodel to Support the Joint Optimization of Socio Technical Systems. <i>Systems</i> 2(3): 273–296</p>
+<p>Di Maio P, Ure J. 2013. An open conceptual framework for operationalising collective awareness and social sensing. WIMS 2013, article 46</p>
+<p>Di Maio P. 2011. 'Just enough' ontology engineering. WIMS 2011, article 8</p>
+<p>Di Maio P. 2009. Toward Pragmatic Dimensions of Knowledge Reuse and Learning on the Web. I-SEMANTICS 2009: 750–762</p>
+</div>
+
+<h2>Preprints</h2>
+<div class="pub">
+<p>Di Maio P. 2020. Neurosymbolic Knowledge Representation for Explainable and Trustworthy AI. Preprints.org, <a href="https://doi.org/10.20944/preprints202001.0163.v1">doi:10.20944/preprints202001.0163.v1</a></p>
+<p>Di Maio P. 2011. 'Just Enough' Ontology Engineering. <a href="https://arxiv.org/abs/1108.1488">arXiv:1108.1488</a></p>
+<p>Di Maio P. 2011. Knowledge Audit Framework. <a href="https://arxiv.org/abs/1108.1490">arXiv:1108.1490</a></p>
+<p>Di Maio P. 2011. Towards a Reference Model for Open Access and Knowledge Sharing, Lessons from Systems Research. <a href="https://arxiv.org/abs/1112.2619">arXiv:1112.2619</a></p>
+</div>
+
+<p class="foot">I also contribute to open standards, work as a technical author, and make art and sail. Referees available on request.</p>
+
+</div></body>
 </html>
